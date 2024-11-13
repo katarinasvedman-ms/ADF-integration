@@ -1,0 +1,11 @@
+{
+    "apiVersion": "2021-01-15",
+    "type": "Microsoft.Web/sites",
+    "name": "[variables('sites_<logic-app-resource-name>_name')]",
+    "location": "[resourceGroup().location]",
+    "kind": "functionapp,workflowapp",
+    "identity": {
+       "type": "SystemAssigned"
+    },
+    "properties": {}
+ }

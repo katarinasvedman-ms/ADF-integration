@@ -1,6 +1,6 @@
 {
-    "azureLogicAppsStandard.deploySubpath": ".",
-    "azureLogicAppsStandard.projectLanguage": "JavaScript",
+    "azureLogicAppsStandard.deploySubpath": "bin/Release/net6.0/publish",
+    "azureLogicAppsStandard.projectLanguage": "C#",
     "azureLogicAppsStandard.projectRuntime": "~4",
     "debug.internalConsoleOptions": "neverOpen",
     "azureFunctions.suppressProject": true,
@@ -9,5 +9,6 @@
     },
     "omnisharp.dotNetCliPaths": [
         "C:\\Users\\kapeltol\\.azurelogicapps\\dependencies\\DotNetSDK"
-    ]
+    ],
+    "azureLogicAppsStandard.preDeployTask": "publish"
 }
