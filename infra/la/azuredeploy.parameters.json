@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "kind": {
+        "value": "StorageV2"
+      },
+      "skuName": {
+        "value": "Standard_LRS"
+      },
+      "skuTier": {
+        "value": "Standard"
+      },
+        "location": {
+            "value": "sweden central"
+        },
+        "environmentName": {
+            "value": "env-kapeltol"
+        },
+        "projectName": {
+            "value": "kapeltol"
+        },
+		"logicAppName": {
+            "value": "la-kapeltol"
+        },
+		"appServicePlanName": {
+            "value": "asp-kapeltol"
+        },
+        "storageName": {
+            "value": "stkapeltol"
+        }
+   }
+}

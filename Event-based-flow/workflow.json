@@ -1,0 +1,82 @@
+{
+  "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "actions": {
+          "Initialize_variable": {
+              "type": "InitializeVariable",
+              "inputs": {
+                  "variables": [
+                      {
+                          "name": "Propertyvalue",
+                          "type": "string",
+                          "value": "@triggerOutputs()?[\\'body/propertyValue\\']"
+                      }
+                  ]
+              },
+              "runAfter": {}
+          },
+          "Compose": {
+              "type": "Compose",
+              "inputs": {
+                  "email": "@{variables('Propertyvalue')}",
+                  "fullName": ", "
+              },
+              "runAfter": {
+                  "Initialize_variable": [
+                      "SUCCEEDED"
+                  ]
+              }
+          }
+      },
+      "contentVersion": "1.0.0.0",
+      "outputs": {},
+      "triggers": {
+          "When_a_HTTP_request_is_received": {
+              "type": "Request",
+              "kind": "Http",
+              "inputs": {
+                  "method": "POST",
+                  "schema": {
+                      "type": "object",
+                      "properties": {
+                          "appId": {
+                              "type": "integer"
+                          },
+                          "eventId": {
+                              "type": "integer"
+                          },
+                          "subscriptionId": {
+                              "type": "integer"
+                          },
+                          "portalId": {
+                              "type": "integer"
+                          },
+                          "occurredAt": {
+                              "type": "integer"
+                          },
+                          "subscriptionType": {
+                              "type": "string"
+                          },
+                          "attemptNumber": {
+                              "type": "integer"
+                          },
+                          "objectId": {
+                              "type": "integer"
+                          },
+                          "changeSource": {
+                              "type": "string"
+                          },
+                          "propertyName": {
+                              "type": "string"
+                          },
+                          "propertyValue": {
+                              "type": "string"
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  },
+  "kind": "Stateful"
+}
